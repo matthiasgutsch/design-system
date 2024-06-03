@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
+    AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
@@ -11,21 +12,24 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'p-card',
+  selector: 'dc-card',
   template: `
-    <div class="p-card" [class]="class">
-      <div class="p-card-header" *ngIf="header">
+    <div class="dc-card" [class]="class" [attr.data-pc-name]="'card'">
+      <div class="dc-card-header" *ngIf="header">
         <ng-container *ngTemplateOutlet="header"></ng-container>
       </div>
-      <div class="p-card-content">
-        <div class="p-card-header" *ngIf="cardTitle">
+        <div class="dc-card-content">
+        
+        <div class="dc-card-header" *ngIf="cardTitle">
           {{ cardTitle }}
         </div>
 
         <ng-content></ng-content>
+
         <ng-container *ngTemplateOutlet="content"></ng-container>
+
       </div>
-      <div class="p-card-footer" *ngIf="footer">
+      <div class="dc-card-footer" *ngIf="footer">
         <ng-container *ngTemplateOutlet="footer"></ng-container>
       </div>
     </div>
@@ -34,19 +38,31 @@ import {
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./card.css'],
   host: {
-    class: 'p-element',
+    class: 'dc-element',
   },
 })
-export class Card {
-  @Input() cardTitle: string | undefined;
-  @Input() class: string | undefined;
-
-  @ContentChild('header') header!: TemplateRef<any>;
-  @ContentChild('content') content!: TemplateRef<any>;
-  @ContentChild('footer') footer!: TemplateRef<any>;
-  @ContentChild('content') titleTemplate!: TemplateRef<any>;
+export class Card implements AfterContentInit {
+    @Input() cardTitle: string | undefined;
+    @Input() class: string | undefined;
+    @Input() content: TemplateRef<any> | null = null;
+  
+    @ContentChild('Header')  headerFacet: TemplateRef<any> | any;
+    @ContentChild('Footer')  footerFacet: TemplateRef<any> | any;
+  
+    @ContentChild('header')  header!: TemplateRef<any>;
+    @ContentChild('footer')  footer!: TemplateRef<any>;
+    @ContentChild('content') titleTemplate!: TemplateRef<any>;
 
   constructor(private el: ElementRef) {}
+
+  ngAfterContentInit() {
+
+
+  }
+
+  getBlockableElement(): HTMLElement {
+    return this.el.nativeElement.children[0];
+}
 }
 
 @NgModule({

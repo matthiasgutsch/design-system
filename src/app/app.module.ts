@@ -14,7 +14,6 @@ import { Card } from './card/card.component';
     BrowserModule,
     AppRoutingModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })
