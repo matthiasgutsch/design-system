@@ -1,0 +1,13 @@
+.dc-message {
+    padding: 15px; 
+    background-color: #efefef;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+}
+
+.dc-message.alert {
+    padding: 15px; 
+    background-color: #333;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+    color: #FFF;
+}
+
