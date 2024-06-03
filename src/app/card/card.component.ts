@@ -23,7 +23,6 @@ import {
         <div class="dc-card-header" *ngIf="cardTitle">
           {{ cardTitle }}
         </div>
-
         <ng-content></ng-content>
 
         <ng-container *ngTemplateOutlet="content"></ng-container>
