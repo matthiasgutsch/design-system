@@ -17,17 +17,21 @@
   </ng-template>
 </dc-card>
 <br />
+
 <dc-card cardTitle="Advanced Card">
   <ng-template #footer> </ng-template>
-
   <dc-card cardTitle="Advanced Card 2">
     <ng-template #footer>
       <dc-button buttonTitle="Button Title" class="full-width">
         <ng-template #iconLeft> + </ng-template>
         <ng-template #iconRight> + </ng-template>
     </dc-button>
-    </ng-template></dc-card
-  >
+
+    <dc-button buttonTitle="Small Button Title">
+      <ng-template #iconLeft> + </ng-template>
+  </dc-button>
+
+    </ng-template></dc-card>
 </dc-card>
 
 <br />
@@ -38,7 +42,7 @@
   </ng-template>
 </dc-message>
 
-<dc-message cardTitle="Advanced message" color="">
+<dc-message cardTitle="Advanced message">
   sddsdsds content
   <ng-template #footer>
     <button>dssdddssd</button>
