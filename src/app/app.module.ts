@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { MessageComponent } from './message/message.component';
 import { ButtonComponent } from './button/button.component';
+import { LoaderComponent } from './loader/loader.component';
+import { IconComponent } from './icon/icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     ButtonComponent,
+    LoaderComponent,
+    IconComponent,
     MessageComponent
   ],
   imports: [

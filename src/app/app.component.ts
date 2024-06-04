@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'design-system';
+
+
+  hello($event: Event) {
+    console.log('funtion works')
+    console.log($event)
+  }
 }
