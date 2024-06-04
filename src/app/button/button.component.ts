@@ -46,8 +46,6 @@ export class ButtonComponent implements AfterContentInit {
     @Input() class: string | undefined;
     @Input() content: TemplateRef<any> | null = null;
   
-    @ContentChild('iconLeft')  headerFacet: TemplateRef<any> | any;
-    @ContentChild('Footer')  footerFacet: TemplateRef<any> | any;
   
     @ContentChild('iconLeft')  iconLeft!: TemplateRef<any>;
     @ContentChild('iconRight')  iconRight!: TemplateRef<any>;

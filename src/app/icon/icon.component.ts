@@ -31,10 +31,8 @@ export class IconComponent implements AfterContentInit {
     @Input() content: TemplateRef<any> | null = null;
   
     @ContentChild('iconLeft')  headerFacet: TemplateRef<any> | any;
-    @ContentChild('Footer')  footerFacet: TemplateRef<any> | any;
     @ContentChild('iconLeft')  iconLeft!: TemplateRef<any>;
     @ContentChild('iconRight')  iconRight!: TemplateRef<any>;
-    @ContentChild('content') titleTemplate!: TemplateRef<any>;
 
   constructor(private el: ElementRef) {}
 
