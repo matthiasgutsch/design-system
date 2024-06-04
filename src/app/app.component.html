@@ -1,6 +1,6 @@
 <router-outlet></router-outlet>
 
-<dc-card  class="special-card">
+<dc-card class="special-card">
   <ng-template #header>
     <h1>ddsfddfs</h1>
   </ng-template>
@@ -18,18 +18,19 @@
 </dc-card>
 <br />
 <dc-card cardTitle="Advanced Card">
-  <ng-template #footer>
-  </ng-template>
-  
+  <ng-template #footer> </ng-template>
+
   <dc-card cardTitle="Advanced Card 2">
-    dsdddds
     <ng-template #footer>
-      <button>dssdddssd</button> <button>dssdddssd</button>
+      <dc-button buttonTitle="Button Title" class="full-width">
+        <ng-template #iconLeft> + </ng-template>
+        <ng-template #iconRight> + </ng-template>
+    </dc-button>
     </ng-template></dc-card
   >
 </dc-card>
 
-<br>
+<br />
 <dc-message cardTitle="Advanced message" color="alert">
   sddsdsds content
   <ng-template #footer>

@@ -1,6 +1,26 @@
-.dc-card {
+.dc-button {
     border: 1px solid #ddd;
-    padding: 15px; 
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+    padding: 15px;
+}
+
+.dc-button.full-width {
+    width: 100%;
+}
+
+.dc-button-label {
+    width: 100%;
+    display:inline;
+    white-space:nowrap
+
+}
+
+.dc-button-icon-right {
+    float: right;
+    margin-left: 8px;
+}
+
+.dc-button-icon-left {
+    float: left;
+    margin-right: 8px;
 }
 

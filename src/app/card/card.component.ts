@@ -22,7 +22,7 @@ import {
       <div class="dc-card-header" *ngIf="cardTitle">
           {{ cardTitle }}
         </div>
-        
+
         <div class="dc-card-content">
         
  
@@ -43,7 +43,7 @@ import {
     class: 'dc-element',
   },
 })
-export class Card implements AfterContentInit {
+export class CardComponent implements AfterContentInit {
     @Input() cardTitle: string | undefined;
     @Input() class: string | undefined;
     @Input() content: TemplateRef<any> | null = null;

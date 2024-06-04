@@ -14,25 +14,25 @@ import {
 @Component({
   selector: 'dc-button',
   template: `
-    <div class="dc-button" [class]="class">
-      <div class="dc-card-header" *ngIf="header">
-        <ng-container *ngTemplateOutlet="header"></ng-container>
+    <button class="dc-button" [class]="class">
+      <div class="dc-button-icon-left" *ngIf="iconLeft">
+        <ng-container *ngTemplateOutlet="iconLeft"></ng-container>
       </div>
 
-      <div class="dc-card-header" *ngIf="cardTitle">
-          {{ cardTitle }}
+      <div class="dc-button-label" *ngIf="buttonTitle">
+          {{ buttonTitle }}
         </div>
 
-        <div class="dc-card-content">
+        <div class="dc-button-label">
         <ng-content></ng-content>
 
         <ng-container *ngTemplateOutlet="content"></ng-container>
 
       </div>
-      <div class="dc-card-footer" *ngIf="footer">
-        <ng-container *ngTemplateOutlet="footer"></ng-container>
+      <div class="dc-button-icon-right" *ngIf="iconRight">
+        <ng-container *ngTemplateOutlet="iconRight"></ng-container>
       </div>
-    </div>
+    </button>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
@@ -42,15 +42,15 @@ import {
   },
 })
 export class ButtonComponent implements AfterContentInit {
-    @Input() cardTitle: string | undefined;
+    @Input() buttonTitle: string | undefined;
     @Input() class: string | undefined;
     @Input() content: TemplateRef<any> | null = null;
   
-    @ContentChild('Header')  headerFacet: TemplateRef<any> | any;
+    @ContentChild('iconLeft')  headerFacet: TemplateRef<any> | any;
     @ContentChild('Footer')  footerFacet: TemplateRef<any> | any;
   
-    @ContentChild('header')  header!: TemplateRef<any>;
-    @ContentChild('footer')  footer!: TemplateRef<any>;
+    @ContentChild('iconLeft')  iconLeft!: TemplateRef<any>;
+    @ContentChild('iconRight')  iconRight!: TemplateRef<any>;
     @ContentChild('content') titleTemplate!: TemplateRef<any>;
 
   constructor(private el: ElementRef) {}
