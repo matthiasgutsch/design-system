@@ -5,10 +5,9 @@
     <h1>ddsfddfs</h1>
   </ng-template>
   <ng-template #footer>
-    <dc-button buttonTitle="Button Title"></dc-button>  
-    <dc-button buttonTitle="Button Title"></dc-button>  
-    <dc-button buttonTitle="Button Title"></dc-button>  
-
+    <dc-button buttonTitle="Button Title"></dc-button>
+    <dc-button buttonTitle="Button Title"></dc-button>
+    <dc-button buttonTitle="Button Title"></dc-button>
   </ng-template>
 </dc-card>
 <br />
@@ -16,7 +15,7 @@
 <dc-card cardTitle="Advanced Card">
   sddsdsds content
   <ng-template #footer>
-    <dc-button buttonTitle="Button Title"></dc-button>  
+    <dc-button buttonTitle="Button Title"></dc-button>
   </ng-template>
 </dc-card>
 <br />
@@ -28,26 +27,34 @@
       <dc-button buttonTitle="Button Title" class="full-width">
         <ng-template #iconLeft> + </ng-template>
         <ng-template #iconRight> + </ng-template>
-    </dc-button>
+      </dc-button>
 
-    <dc-button buttonTitle="Small Button Title">
-      <ng-template #iconLeft> + </ng-template>
-  </dc-button>
-
-    </ng-template></dc-card>
+      <dc-button buttonTitle="Small Button Title">
+        <ng-template #iconLeft> + </ng-template>
+      </dc-button>
+    </ng-template></dc-card
+  >
 </dc-card>
 
 <br />
 <dc-message cardTitle="Advanced message" color="alert">
   sddsdsds content
   <ng-template #footer>
-    <dc-button buttonTitle="Button Title"></dc-button>  
+    <dc-button buttonTitle="Button Title"></dc-button>
   </ng-template>
 </dc-message>
 
 <dc-message cardTitle="Advanced message">
   sddsdsds content
   <ng-template #footer>
-    <dc-button buttonTitle="Button Title"></dc-button>
+    
+    <dc-button> Button Title</dc-button>
+
+    <dc-button onclick="hello()">
+      Button Title with click
+      <ng-template #iconLeft> + </ng-template>
+    </dc-button>
+
+
   </ng-template>
 </dc-message>
