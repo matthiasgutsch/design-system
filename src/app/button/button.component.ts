@@ -12,9 +12,9 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'dc-card',
+  selector: 'dc-button',
   template: `
-    <div class="dc-card" [class]="class" [attr.data-pc-name]="'card'">
+    <div class="dc-button" [class]="class">
       <div class="dc-card-header" *ngIf="header">
         <ng-container *ngTemplateOutlet="header"></ng-container>
       </div>
@@ -22,10 +22,8 @@ import {
       <div class="dc-card-header" *ngIf="cardTitle">
           {{ cardTitle }}
         </div>
-        
+
         <div class="dc-card-content">
-        
- 
         <ng-content></ng-content>
 
         <ng-container *ngTemplateOutlet="content"></ng-container>
@@ -38,12 +36,12 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./card.css'],
+  styleUrls: ['./button.css'],
   host: {
     class: 'dc-element',
   },
 })
-export class Card implements AfterContentInit {
+export class ButtonComponent implements AfterContentInit {
     @Input() cardTitle: string | undefined;
     @Input() class: string | undefined;
     @Input() content: TemplateRef<any> | null = null;
