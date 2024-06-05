@@ -34,7 +34,7 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./message.css'],
+  styleUrls: ['./message.scss'],
   host: {
     '[class.dcui-message]': 'true',
   },
