@@ -1,16 +1,18 @@
+@import '../../styles';
+
 .dc-button {
     border: 0px solid #ddd;
-    padding: 15px;
-    background: #efefef;
+    padding: $dcui-grid-size-1;
+    background: $dcui-color-core-brand-primary;
     position: relative;
+    color: $dcui-color-core-global-white;
 }
 
 .dc-button:hover {
-    background-color: #008CBA;
-    color: white;
+    background-color: $dcui-color-core-global-white;
+    color: $dcui-color-core-brand-primary;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 6px;
     z-index: 2;
-
 }
 
 .dc-button:hover svg{
@@ -37,4 +39,3 @@
     float: left;
     margin-right: 8px;
 }
-
