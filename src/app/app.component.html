@@ -6,8 +6,7 @@
   </ng-template>
   <ng-template #footer>
     <dc-button buttonTitle="Button Title" (click)="hello($event)"></dc-button>
-    <dc-button buttonTitle="Button Title" (click)="hello($event)"></dc-button>
-    <dc-button buttonTitle="Button Title" (click)="hello($event)"></dc-button>
+    <dc-button buttonTitle="Button Title" class="full-width" (click)="hello($event)"></dc-button>
   </ng-template>
 </dc-card>
 <br />
@@ -22,17 +21,14 @@
 
 <dc-card cardTitle="Advanced Card">
   <ng-template #footer> </ng-template>
+
   <dc-card cardTitle="Advanced Card 2">
     <ng-template #footer>
-      <dc-button
-        buttonTitle="Button Title"
-        class="full-width"
-        (click)="hello($event)"
-      >
-        <ng-template #iconLeft> <dc-icon></dc-icon></ng-template>
+      <dc-button buttonTitle="Button Title" class="full-width" (click)="hello($event)">
+        <ng-template #iconLeft><dc-icon></dc-icon></ng-template>
         <ng-template #iconRight> + </ng-template>
       </dc-button>
-
+      
       <dc-button buttonTitle="Small Button Title" (click)="hello($event)">
         <ng-template #iconLeft> + </ng-template>
       </dc-button>
@@ -53,7 +49,6 @@
   sddsdsds content
   <ng-template #footer>
     <dc-button (click)="hello($event)"> Button Title</dc-button>
-
     <dc-button (click)="hello($event)">
       Button Title with click
       <ng-template #iconLeft> + </ng-template>

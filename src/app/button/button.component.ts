@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-    AfterContentInit,
+  AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
@@ -10,6 +10,9 @@ import {
   TemplateRef,
   ViewEncapsulation,
 } from '@angular/core';
+export type DcuiButtonSize = 's' | 'm' | 'l';
+export type DcuiButtonVariant = 'primary' | 'secondary' | 'text' | 'inline';
+export type DcuiButtonIconPosition = 'before' | 'after';
 
 @Component({
   selector: 'dc-button',
@@ -20,14 +23,13 @@ import {
       </div>
 
       <div class="dc-button-label" *ngIf="buttonTitle">
-          {{ buttonTitle }}
-        </div>
+        {{ buttonTitle }}
+      </div>
 
-        <div class="dc-button-label">
+      <div class="dc-button-label">
         <ng-content></ng-content>
 
         <ng-container *ngTemplateOutlet="content"></ng-container>
-
       </div>
       <div class="dc-button-icon-right" *ngIf="iconRight">
         <ng-container *ngTemplateOutlet="iconRight"></ng-container>
@@ -36,31 +38,30 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./button.css'],
+  styleUrls: ['./button.scss'],
   host: {
     class: 'dc-element',
   },
 })
 export class ButtonComponent implements AfterContentInit {
-    @Input() buttonTitle: string | undefined;
-    @Input() class: string | undefined;
-    @Input() content: TemplateRef<any> | null = null;
-  
-  
-    @ContentChild('iconLeft')  iconLeft!: TemplateRef<any>;
-    @ContentChild('iconRight')  iconRight!: TemplateRef<any>;
-    @ContentChild('content') titleTemplate!: TemplateRef<any>;
+  @Input() buttonTitle: string | undefined;
+  @Input() class: string | undefined;
+  @Input() content: TemplateRef<any> | null = null;
+  @Input() public size: DcuiButtonSize = 'm';
+  @Input() public variant: DcuiButtonVariant = 'primary';
+  @Input() public iconPosition: DcuiButtonIconPosition = 'before';
+
+  @ContentChild('iconLeft') iconLeft!: TemplateRef<any>;
+  @ContentChild('iconRight') iconRight!: TemplateRef<any>;
+  @ContentChild('content') titleTemplate!: TemplateRef<any>;
 
   constructor(private el: ElementRef) {}
 
-  ngAfterContentInit() {
-
-
-  }
+  ngAfterContentInit() {}
 
   getBlockableElement(): HTMLElement {
     return this.el.nativeElement.children[0];
-}
+  }
 }
 
 @NgModule({

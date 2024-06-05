@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import {
-    AfterContentInit,
+  AfterContentInit,
   ChangeDetectionStrategy,
   Component,
   ContentChild,
@@ -44,30 +44,26 @@ import {
   },
 })
 export class CardComponent implements AfterContentInit {
-    @Input() cardTitle: string | undefined;
-    @Input() class: string | undefined;
-    @Input() content: TemplateRef<any> | null = null;
+  @Input() cardTitle: string | undefined;
+  @Input() class: string | undefined;
+  @Input() content: TemplateRef<any> | null = null;
+  @ContentChild('Header')  headerFacet: TemplateRef<any> | any;
+  @ContentChild('Footer')  footerFacet: TemplateRef<any> | any;
+  @ContentChild('header')  header!: TemplateRef<any>;
+  @ContentChild('footer')  footer!: TemplateRef<any>;
+  @ContentChild('content') titleTemplate!: TemplateRef<any>;
   
-    @ContentChild('Header')  headerFacet: TemplateRef<any> | any;
-    @ContentChild('Footer')  footerFacet: TemplateRef<any> | any;
-  
-    @ContentChild('header')  header!: TemplateRef<any>;
-    @ContentChild('footer')  footer!: TemplateRef<any>;
-    @ContentChild('content') titleTemplate!: TemplateRef<any>;
-
   constructor(private el: ElementRef) {}
 
-  ngAfterContentInit() {
-
-
-  }
+  ngAfterContentInit() {}
 
   getBlockableElement(): HTMLElement {
     return this.el.nativeElement.children[0];
-}
+  }
 }
 
 @NgModule({
   imports: [CommonModule],
 })
+
 export class CardModule {}

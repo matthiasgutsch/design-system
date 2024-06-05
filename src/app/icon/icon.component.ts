@@ -14,13 +14,13 @@ import {
 @Component({
   selector: 'dc-icon',
   template: `
-      <svg fill="#000000" [class]="class" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+      <svg fill="#000000"  [class]="class" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
       <g><path d="M15,6V1.76l-1.7,1.7A7,7,0,1,0,14.92,9H13.51a5.63,5.63,0,1,1-1.2-4.55L10.76,6Z"/></g>
       </svg>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./icon.css'],
+  styleUrls: ['./icon.scss'],
   host: {
     class: 'dc-element',
   },
