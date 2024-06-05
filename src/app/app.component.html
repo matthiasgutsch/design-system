@@ -6,7 +6,7 @@
     <h1>ddsfddfs</h1>
   </ng-template>
   <ng-template #footer>
-    <dc-button buttonTitle="Button Title" (click)="hello($event)"></dc-button>
+    <dc-button (click)="hello($event)"> <ng-template #iconLeft><dc-icon></dc-icon></ng-template></dc-button>
     <dc-button buttonTitle="Button Title" class="full-width" (click)="hello($event)"></dc-button>
   </ng-template>
 </dc-card>
@@ -22,7 +22,6 @@
 
 <dc-card cardTitle="Advanced Card">
   <ng-template #footer> </ng-template>
-
   <dc-card cardTitle="Advanced Card 2">
     <ng-template #footer>
       <dc-button buttonTitle="Button Title" class="full-width" (click)="hello($event)">

@@ -26,11 +26,11 @@ export type DcuiButtonIconPosition = 'before' | 'after';
         {{ buttonTitle }}
       </div>
 
-      <div class="dc-button-label">
+      <span class="dc-button-label">
         <ng-content></ng-content>
 
         <ng-container *ngTemplateOutlet="content"></ng-container>
-      </div>
+      </span>
       <div class="dc-button-icon-right" *ngIf="iconRight">
         <ng-container *ngTemplateOutlet="iconRight"></ng-container>
       </div>

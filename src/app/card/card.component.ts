@@ -38,7 +38,7 @@ import {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['./card.css'],
+  styleUrls: ['./card.scss'],
   host: {
     class: 'dc-element',
   },

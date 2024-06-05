@@ -1,6 +1,10 @@
+@import '../../styles';
+
+
 .dc-card {
     border: 1px solid #ddd;
     padding: 15px; 
+    font-family: $dcui-font-family;
 }
 
 .dc-card h1 {
