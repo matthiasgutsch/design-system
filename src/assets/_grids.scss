@@ -1,0 +1,40 @@
+@use 'tokens' as t;
+
+@function gridUnits($units) {
+  @return $units * t.$dcui-grid-size-1;
+}
+
+// Direction top, left, right, bottom
+@mixin gridMargin($direction, $gridUnits) {
+  $value: $gridUnits * t.$dcui-grid-size-1;
+
+  @if ($direction == 'top') {
+    margin-block-start: $value;
+  }
+  @if ($direction == 'right') {
+    margin-inline-end: $value;
+  }
+  @if ($direction == 'bottom') {
+    margin-block-end: $value;
+  }
+  @if ($direction == 'left') {
+    margin-inline-start: $value;
+  }
+}
+
+@mixin gridPadding($direction, $gridUnits) {
+  $value: $gridUnits * t.$dcui-grid-size-1;
+
+  @if ($direction == 'top') {
+    padding-block-start: $value;
+  }
+  @if ($direction == 'right') {
+    padding-inline-end: $value;
+  }
+  @if ($direction == 'bottom') {
+    padding-block-end: $value;
+  }
+  @if ($direction == 'left') {
+    padding-inline-start: $value;
+  }
+}

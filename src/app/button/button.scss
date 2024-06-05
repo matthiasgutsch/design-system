@@ -2,10 +2,21 @@
 
 .dc-button {
     border: 0px solid #ddd;
-    padding: $dcui-grid-size-1;
+    font-family: $dcui-font-family;
+    font-size: $dcui-typography-paragraph-size;
+    padding: 0px $dcui-grid-size-2;
     background: $dcui-color-core-brand-primary;
     position: relative;
+    border-radius: 2px;
+    height: $dcui-grid-size-5;
+    line-height: $dcui-grid-size-5;
+    border: 1px solid $dcui-color-core-brand-primary;
     color: $dcui-color-core-global-white;
+}
+
+
+.dc-button svg{
+    fill: $dcui-color-core-global-white;
 }
 
 .dc-button:hover {
@@ -15,8 +26,9 @@
     z-index: 2;
 }
 
+
 .dc-button:hover svg{
-    fill: white;
+    fill: $dcui-color-core-brand-primary;
 }
 
 
@@ -24,16 +36,19 @@
     width: 100%;
 }
 
+
 .dc-button-label {
     width: 100%;
     display:inline;
     white-space:nowrap;
 }
 
+
 .dc-button-icon-right {
     float: right;
     margin-left: 8px;
 }
+
 
 .dc-button-icon-left {
     float: left;
